@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Scrolling Nav - Start Bootstrap Template</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/scrolling-nav.css" rel="stylesheet">
+
+    <!--Load the AJAX API-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+    
+      // Load the Visualization API and the corechart package.
+      google.charts.load('current', {'packages':['corechart']});
+    
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.charts.setOnLoadCallback(drawChart);
+    
+          // Callback that creates and populates a data table,
+          // instantiates the pie chart, passes in the data and
+          // draws it.
+      function drawChart() {
+    
+        // Create the data table.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'City');
+        data.addColumn('number', 'Sites');
+        data.addRows(FakeNewsPlaces);
+    
+            // Set chart options
+        var options = {'title':'Cities With the Most Fake News',
+                        'width':700,
+                        'height':500};
+    
+            // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+
+  </head>
+
+  <body id="page-top">
+      <div id= "imposter" style="
+      position:absolute;
+      left: 330px;
+      top:3366px;
+      width:150px;
+      height:100px;
+      background:white;
+      visibility:hidden;
+      text-align: center;
+      vertical-align: middle;
+      line-height:100px">an imposter site.
+    </div>
+
+    
+    <div id= "parody" style="
+      position:absolute;
+      left: 322px;
+      top:3366px;
+      width:150px;
+      height:100px;
+      background:white;
+      visibility:hidden;
+      text-align: center;
+      vertical-align: middle;
+      line-height:100px">a parody site.
+    </div>
+
+      
+    <div id= "fake" style="
+      position:absolute;
+      left: 326px;
+      top:3366px;
+      width:150px;
+      height:100px;
+      background: white;
+      visibility:hidden;
+      text-align: center;
+      vertical-align: middle;
+      line-height:100px">a fake news site.
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">Chelsea Chitty</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#background">Background</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#map">Map</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#checker">Checker</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="bg-primary text-white">
+      <div class="container text-center">
+        <h1>Combatting Fake News</h1>
+        <p class="lead">A site to help you fight fake news.</p>
+      </div>
+    </header>
+
+    <section id="background">
+      <div class="container"> 
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h2>Background</h2>
+            <br>
+            <h4>Who Believes Fake News?</h4>
+            <br>
+            <p>Short answer? Everyone. In a 2012 survey on political rumors, 70% of respondents expressed belief in at least one rumor asked about,
+              and these results were well-distributed across the population, crossing many demographics- including political parties.
+              Yes, that means both Republicans and Democrats sometimes hold crazy beliefs and can fall in the fake news trap.</p>
+            <br>
+            <h4>What Influences Belief?</h4>
+            <br>
+            <p>A lot of research has been done to figure out why people believe misinformation. Not much of that research has been conclusive.
+              One thing research has shown is that once you read something false, it tends to stick in your brain you remember it ss true even after
+              it has been corrected. This 'continued influence effect', as it is called, seems to be nearly impossible to correct. So, once you accept 
+              false information to be true, chances are you will always remember it is true- even if it is corrected.
+            </p>
+            <br>
+            <h4>What Can We Do?</h4>
+            <br>
+            <p>One of the major things we can do to keep ourselves from falling into the fake news trap is to be vigilant. We need to critically
+              read all of our news sources- and be ready to come across misinformation. Research has shown that the continued influence effect can 
+              be combatted effectively more often when a person is warned that the information they are reading could be false, and if they receive 
+              alternative, true information to replace the misinformation.
+            </p>
+            <br>
+            <h4>This Site</h4>
+            <br>
+            <p>This site wants to help you learn more about where fake news comes from, and to help warn you if an online news article is coming from 
+              a less than trustworthy source. Using a database of known fake news sources from PolitiFact, this site maps where fake news comes from, and offers
+              a fake news checker in which you can submit your article URL, and we'll let you know whether it comes from a known fake news site or not.
+              This way, you can be prepared and read your news critically.
+            </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="map" class="bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h2>Where in the world is fake news?</h2>
+            <div  id = "map1" style= "width:750px;height:450px;background:white;"></div>
+            <br><br>
+            <h2>Top Fake News Cities</h2>
+            <div id="chart_div"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="checker">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h2>Fake News Checker</h2>
+            <p class="lead">Input the URL of your article below, and the fake news checker will look through a list of known fake news websites compiled by PolitiFact and let you know if your article comes from one of those sites. Enter URL:</p>
+            <form id = "form1" action= "">
+                Website: <input type = "text" name = "website"> 
+                <br><br>
+                <input type = "button" onclick="myFunction(this.form)" value = "Submit!">
+            </form>
+            <br>
+            <h3>Results:</h3>
+            <p>This site is: </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white"> Chelsea Chitty 1.00 Project 2018</p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom JavaScript for this theme -->
+    <script src="js/scrolling-nav.js"></script>
+
+    <script>
+
+      function myFunction(form){
+        //Get user input
+        var TestVar = form.website.value;
+
+        console.log(TestVar);
+        
+        //Extract domain
+        var url = TestVar;
+        var hostname;
+
+        if(url.indexOf("://") > -1){
+          hostname = url.split('/')[2];
+        }
+        else{
+          hostname = url.split('/')[0];
+        }
+
+        hostname = hostname.split(':')[0];
+        hostname = hostname.split('?')[0];
+
+        console.log(hostname);
+
+        var domain = hostname
+        var splitArr = domain.split('.')
+        var arrLen = splitArr.length
+
+        if(arrLen > 2){
+          domain = splitArr[arrLen - 2] + '.' + splitArr[arrLen - 1];
+
+          if(splitArr[arrLen - 2].length == 2 && splitArr[arrLen - 1].length == 2){
+              domain = splitArr[arrLen - 3] + '.' + domain;
+          }
+        }
+
+        console.log(domain);
+        //Loop through data base
+        for(var i = 0; i < data.length; i++){
+          //Check if in data
+          if(data[i].site === domain){
+            //Check type and make proper div visible
+              if(data[i].type === 'fake news'){
+                  document.getElementById('fake').style.visibility= 'visible'
+              }
+              else if(data[i].type === 'parody'){
+                 document.getElementById('parody').style.visibility= 'visible'
+              }
+              else if(data[i].type === 'imposter'){
+                 document.getElementById('imposter').style.visibility= 'visible'
+              }
+            };
+          };
+      };
+    
+      function myMap(){
+
+      var mapOptions = {
+      center: new google.maps.LatLng(0,0),
+      zoom:1.75,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+      };
+      var map = new google.maps.Map(document.getElementById("map1"), mapOptions);
+
+      for(var i =0; i<data.length; i++ ){
+      var marker = new google.maps.Marker({
+        position: new google.maps.LatLng(data[i].lat,data[i].lng),
+        map: map
+      });
+      }
+    };
+
+    var cities = [ 
+            'Brea, CA, US',
+            'Brea, CA, US',
+            'Brea, CA, US',
+            'Brea, CA, US',
+            'Brea, CA, US',
+            'Brea, CA, US',
+            'Brea, CA, US',
+            'Brea, CA, US',
+            'Chesterbrook, PA, US',
+            'Chesterbrook, PA, US',
+            'Chesterbrook, PA, US',
+            'Chesterbrook, PA, US',
+            'Chesterbrook, PA, US',
+            'Chesterbrook, PA, US',
+            'Chesterbrook, PA, US',
+            'Chesterbrook, PA, US',
+            'Chesterbrook, PA, US',
+            'Chesterbrook, PA, US',
+            'Chesterbrook, PA, US',
+            'Chesterbrook, PA, US',
+            'Chesterbrook, PA, US',
+            'Chesterbrook, PA, US',
+            'Jerusalem, Israel',
+            'Jerusalem, Israel',
+            'Jerusalem, Israel',
+            'Jerusalem, Israel',
+            'Jerusalem, Israel',
+            'Jerusalem, Israel',
+            'Jerusalem, Israel',
+            'Kumanovo, Macedonia',
+            'Kumanovo, Macedonia',
+            'Kumanovo, Macedonia',
+            'Kumanovo, Macedonia',
+            'Kumanovo, Macedonia',
+            'Kumanovo, Macedonia',
+            'Kumanovo, Macedonia',
+            'Kumanovo, Macedonia',
+            'Nobby Beach, Australia',
+            'Nobby Beach, Australia',
+            'Nobby Beach, Australia',
+            'Nobby Beach, Australia',
+            'Nobby Beach, Australia',
+            'Nobby Beach, Australia',
+            'Nobby Beach, Australia',
+            'Panama City, Panama',
+            'Panama City, Panama',
+            'Panama City, Panama',
+            'Panama City, Panama',
+            'Panama City, Panama',
+            'Panama City, Panama',
+            'Panama City, Panama',
+            'Panama City, Panama',
+            'Panama City, Panama',
+            'Panama City, Panama',
+            'Panama City, Panama',
+            'Panama City, Panama',
+            'Panama City, Panama',
+            'Panama City, Panama',
+            'Panama City, Panama',
+            'Panama City, Panama',
+            'Panama City, Panama',
+            'Panama City, Panama',
+            'Panama City, Panama',
+            'Panama City, Panama',
+            'Panama City, Panama',
+            'Panama City, Panama',
+            'Panama City, Panama',
+            'Panama City, Panama',
+            'Panama City, Panama',
+            'Panama City, Panama',
+            'Panama City, Panama',
+            'Panama City, Panama',
+            'Panama City, Panama',
+            'Panama City, Panama',
+            'Panama City, Panama',
+            'Panama City, Panama',
+            'Panama City, Panama',
+            'Panama City, Panama',
+            'Panama City, Panama',
+            'Panama City, Panama',
+            'Panama City, Panama',
+            'Panama City, Panama',
+            'Panama City, Panama',
+            'Panama City, Panama',
+            'Panama City, Panama',
+            'Panama City, Panama',
+            'Panama City, Panama',
+            'Panama City, Panama',
+            'Panama City, Panama',
+            'Panama City, Panama',
+            'Scottsdale, AZ, US',
+            'Scottsdale, AZ, US',
+            'Scottsdale, AZ, US',
+            'Scottsdale, AZ, US',
+            'Scottsdale, AZ, US',
+            'Scottsdale, AZ, US',
+            'Scottsdale, AZ, US',
+            'Scottsdale, AZ, US',
+            'Scottsdale, AZ, US',
+            'Scottsdale, AZ, US',
+            'Scottsdale, AZ, US',
+            'Scottsdale, AZ, US',
+            'Scottsdale, AZ, US',
+            'Scottsdale, AZ, US',
+            'Scottsdale, AZ, US',
+            'Scottsdale, AZ, US',
+            'Scottsdale, AZ, US',
+            'Scottsdale, AZ, US',
+            'Scottsdale, AZ, US',
+            'Scottsdale, AZ, US',
+            'Scottsdale, AZ, US',
+            'Scottsdale, AZ, US',
+            'Scottsdale, AZ, US',
+            'Scottsdale, AZ, US',
+            'Scottsdale, AZ, US',
+            'Scottsdale, AZ, US',
+            'Scottsdale, AZ, US',
+            'Scottsdale, AZ, US',
+            'Scottsdale, AZ, US',
+            'Scottsdale, AZ, US',
+            'Scottsdale, AZ, US',
+            'Scottsdale, AZ, US',
+            'Scottsdale, AZ, US',
+            'Scottsdale, AZ, US',
+            'Scottsdale, AZ, US',
+            'Scottsdale, AZ, US',
+            'Scottsdale, AZ, US',
+            'Scottsdale, AZ, US',
+            'Scottsdale, AZ, US',
+            'Scottsdale, AZ, US',
+            'Scottsdale, AZ, US',
+            'Scottsdale, AZ, US',
+            'Scottsdale, AZ, US',
+            'Scottsdale, AZ, US',
+            'Scottsdale, AZ, US',
+            'Scottsdale, AZ, US',
+            'Scottsdale, AZ, US',
+            'Scottsdale, AZ, US',
+            'Scottsdale, AZ, US',
+            'Scottsdale, AZ, US',
+            'Scottsdale, AZ, US',
+            'Scottsdale, AZ, US',
+            'Scottsdale, AZ, US',
+            'Scottsdale, AZ, US',
+            'Scottsdale, AZ, US',
+            'Scottsdale, AZ, US',
+            'Scottsdale, AZ, US',
+            'Scottsdale, AZ, US',
+            'Scottsdale, AZ, US',
+            'Scottsdale, AZ, US',
+            'Scottsdale, AZ, US',
+            'Scottsdale, AZ, US',
+            'Scottsdale, AZ, US',
+            'Scottsdale, AZ, US',
+            'Scottsdale, AZ, US',
+            'Scottsdale, AZ, US',
+            'Scottsdale, AZ, US',
+            'Scottsdale, AZ, US',
+            'Scottsdale, AZ, US',
+            'Scottsdale, AZ, US',
+            'Scottsdale, AZ, US',
+            'Scottsdale, AZ, US',
+            'Scottsdale, AZ, US',
+            'Scottsdale, AZ, US',
+            'Scottsdale, AZ, US',
+            'Scottsdale, AZ, US',
+            'Scottsdale, AZ, US',
+            'Scottsdale, AZ, US',
+            'Scottsdale, AZ, US',
+            'Scottsdale, AZ, US',
+            'Toronto, Canada',
+            'Toronto, Canada',
+            'Toronto, Canada',
+            'Toronto, Canada',
+            'Toronto, Canada',
+            'Toronto, Canada',
+            'Toronto, Canada',
+            'Toronto, Canada',
+            'Toronto, Canada',
+            'Toronto, Canada',
+            'Veles, Macedonia',
+            'Veles, Macedonia',
+            'Veles, Macedonia',
+            'Veles, Macedonia',
+            'Veles, Macedonia',
+            'Veles, Macedonia',
+            'Veles, Macedonia',
+            'Veles, Macedonia',
+            'Veles, Macedonia',
+            'Veles, Macedonia',
+            'Veles, Macedonia',
+            'Veles, Macedonia',
+            'Veles, Macedonia',
+            'Veles, Macedonia'
+        ];
+
+      function countInArray(array, what) {
+          return array.filter(item => item == what).length;
+      };
+
+      var FakeNewsPlaces = [];
+      var matching;
+      var arr;
+      var prev;
+
+      for(var i = 0; i<cities.length; i++){
+          if(cities[i] !=prev){
+              matching = countInArray(cities, cities[i]);
+
+              arr= [];
+              arr[0] = cities[i];
+              arr[1] = matching;
+              FakeNewsPlaces.push(arr);
+            };
+
+          prev = cities[i];
+
+      };
+
+
+
+
+
+  data = [
+    {site: 'classroom.me.uk' , type: 'fake news', lat: 5.6037 , lng: -0.187},
+    {site: 'DailySurge.com' , type: 'fake news', lat: 38.8048 , lng: -77.0469 },
+    {site: 'Anonjekloy.tk' , type: 'fake news', lat: 52.3702 , lng: 4.8952 },
+    {site: 'AntiNews.com' , type: 'fake news', lat: 52.3702 , lng: 4.8952 },
+    {site: 'WazaNews.tk' , type: 'fake news', lat: 52.3702 , lng: 4.8952 },
+    {site: 'Konkonsagh.biz' , type: 'fake news', lat: 6.747 , lng: -1.5209 },
+    {site: 'HeightPost.com' , type: 'fake news', lat: 34.5717 , lng: 73.8972 },
+    {site: 'USHerald.com' , type: 'fake news', lat: 30.2672 , lng: -97.7431 },
+    {site: 'ReligionMind.com' , type: 'fake news', lat: 6.6669 , lng: 80.7048 },
+    {site: 'HalfwayPost.com' , type: 'parody', lat: 45.4871 , lng: -122.804 },
+    {site: 'BabylonBee.com' , type: 'parody', lat: 37.8716 , lng: -122.273 },
+    {site: 'HealthyCareAndBeauty.com' , type: 'fake news', lat: 52.52 , lng: 13.405 },
+    {site: 'WeTheProudPatriots.com' , type: 'fake news', lat: 33.9167 , lng: -117.9001 },
+    {site: 'WorldNewsCircle.com' , type: 'fake news', lat: 33.9167 , lng: -117.9001 },
+    {site: 'CoffeeBreakForYou.com' , type: 'fake news', lat: 33.9167 , lng: -117.9001 },
+    {site: 'ConservativePoliticus.com' , type: 'fake news', lat: 33.9167 , lng: -117.9001 },
+    {site: 'USANewsflash.com' , type: 'fake news', lat: 33.9167 , lng: -117.9001 },
+    {site: 'ENHLive.com' , type: 'fake news', lat: 33.9167 , lng: -117.9001 },
+    {site: 'FederalistTribune.com' , type: 'fake news', lat: 33.9167 , lng: -117.9001 },
+    {site: 'USAPoliticsToday.com' , type: 'fake news', lat: 33.9167 , lng: -117.9001 },
+    {site: 'TheNet24h.com' , type: 'fake news', lat: -27.4698 , lng: 153.0251 },
+    {site: 'KF13.com' , type: 'imposter', lat: 40.6782 , lng: -73.9442 },
+    {site: 'AmericanNews.com' , type: 'fake news', lat: 42.5047 , lng: -71.1956 },
+    {site: 'President45DonaldTrump.com' , type: 'fake news', lat: 42.5047 , lng: -71.1956 },
+    {site: 'NativeAmerican.us' , type: 'fake news', lat: 35.7915 , lng: -78.7811 },
+    {site: 'DailyNewsPosts.info' , type: 'fake news', lat: 40.0757 , lng: -75.4591 },
+    {site: 'DepartedMe.com' , type: 'fake news', lat: 40.0757 , lng: -75.4591 },
+    {site: 'EmpireNews.net' , type: 'parody', lat: 40.0757 , lng: -75.4591 },
+    {site: 'Times.com.mx' , type: 'imposter', lat: 40.0757 , lng: -75.4591 },
+    {site: 'USATodayNews.me' , type: 'imposter', lat: 40.0757 , lng: -75.4591 },
+    {site: 'En-Volve.com' , type: 'fake news', lat: 40.0757 , lng: -75.4591 },
+    {site: 'TrueAmericans.me' , type: 'fake news', lat: 40.0757 , lng: -75.4591 },
+    {site: 'AMPosts.com' , type: 'fake news', lat: 40.0757 , lng: -75.4591 },
+    {site: 'ConservativeSpirit.com' , type: 'fake news', lat: 40.0757 , lng: -75.4591 },
+    {site: 'DepartedMedia.com' , type: 'fake news', lat: 40.0757 , lng: -75.4591 },
+    {site: 'NewsBreaksHere.com' , type: 'fake news', lat: 40.0757 , lng: -75.4591 },
+    {site: 'TheUSA-News.com' , type: 'fake news', lat: 40.0757 , lng: -75.4591 },
+    {site: 'TrueTrumpers.com' , type: 'fake news', lat: 40.0757 , lng: -75.4591 },
+    {site: 'StGeorgeGazette.com' , type: 'fake news', lat: 40.0757 , lng: -75.4591 },
+    {site: 'DamnLeaks.com' , type: 'fake news', lat: 38.8339 , lng: -104.8214 },
+    {site: 'LibertyAlliance.com' , type: 'fake news', lat: 33.9245 , lng: -84.8413 },
+    {site: 'BestThings.us' , type: 'fake news', lat: 7.1907 , lng: 125.4553 },
+    {site: 'The-Global-News.com' , type: 'fake news', lat: 39.7392 , lng: -104.9903 },
+    {site: 'ThatViralFeed.net' , type: 'fake news', lat: 39.7392 , lng: -104.9903 },
+    {site: 'a-news24.com' , type: 'fake news', lat: 23.8103 , lng: 90.4125 },
+    {site: 'NewsBreaksHere.com' , type: 'fake news', lat: 42.6869 , lng: 21.0670 },
+    {site: 'Smag31.com' , type: 'fake news', lat: 53.9979 , lng: -6.406 },
+    {site: 'WOrld.Politics.com' , type: 'fake news', lat: 26.1224 , lng: -80.1373 },
+    {site: 'DonaldTrumpPOTUS45.com' , type: 'fake news', lat: 38.1549 , lng: -78.5645 },
+    {site: 'FreeRepublic.com' , type: 'fake news', lat: 36.7378 , lng: -119.7871 },
+    {site: 'Guerilla.news' , type: 'fake news', lat: 41.5751 , lng: 21.9495 },
+    {site: 'IndiaTimes.com' , type: 'fake news', lat: 28.4595 , lng: 77.0266 },
+    {site: 'TheNationalMarijuanaNews.com' , type: 'fake news', lat: 36.0395 , lng: -114.9817 },
+    {site: 'PuppetStringNews.com' , type: 'fake news', lat: 30.3322 , lng: -81.6557 },
+    {site: 'Politicalo.com' , type: 'parody', lat: 31.7683 , lng: 35.2137 },
+    {site: 'Politicass.com' , type: 'parody', lat: 31.7683 , lng: 35.2137 },
+    {site: 'Politicono.com' , type: 'parody', lat: 31.7683 , lng: 35.2137 },
+    {site: 'Politicops.com' , type: 'parody', lat: 31.7683 , lng: 35.2137 },
+    {site: 'Politicot.com' , type: 'parody', lat: 31.7683 , lng: 35.2137 },
+    {site: 'Religionlo.com' , type: 'parody', lat: 31.7683 , lng: 35.2137 },
+    {site: 'TheRightists.com' , type: 'parody', lat: 31.7683 , lng: 35.2137 },
+    {site: 'DemocraticUnderground.com' , type: 'fake news', lat: 39.0257 , lng: -77.0764 },
+    {site: 'ReflectionofMind.org' , type: 'fake news', lat: 48.6471 , lng: 9.452 },
+    {site: 'LadyLibertyNews.com' , type: 'fake news', lat: 47.6769 , lng: -122.206 },
+    {site: 'PositiveDaily.com' , type: 'fake news', lat: 47.6769 , lng: -122.206 },
+    {site: 'ReadConservatives.news' , type: 'fake news', lat: 47.6769 , lng: -122.206 },
+    {site: '24x365live.com' , type: 'fake news', lat: 55.6761 , lng: 12.5683 },
+    {site: 'ForFreedomWorld.com' , type: 'fake news', lat: 55.6761 , lng: 12.5683 },
+    {site: '2TEOinfo.com' , type: 'fake news', lat: 55.6761 , lng: 12.5683 },
+    {site: 'ILoveNativeAmericans.us' , type: 'fake news', lat: 42.5833 , lng: 21.0001 },
+    {site: '247NewsMedia.com' , type: 'fake news', lat: 42.1323 , lng: 21.7257 },
+    {site: 'GlobalPoliticsNow.com' , type: 'fake news', lat: 42.1323 , lng: 21.7257 },
+    {site: 'GlobalRevolutionNetwork.com' , type: 'fake news', lat: 42.1323 , lng: 21.7257 },
+    {site: 'HealthyWorldHouse.com' , type: 'fake news', lat: 42.1323 , lng: 21.7257 },
+    {site: 'NewPoliticsToday.com' , type: 'fake news', lat: 42.1323 , lng: 21.7257 },
+    {site: 'Success-Street.com' , type: 'fake news', lat: 42.1323 , lng: 21.7257 },
+    {site: 'TheNewYorkEvening.com' , type: 'imposter', lat: 42.1323 , lng: 21.7257 },
+    {site: 'WashingtonEvening.com' , type: 'imposter', lat: 42.1323 , lng: 21.7257 },
+    {site: 'TeaParty.org' , type: 'fake news', lat: 33.6102 , lng: -117.7251 },
+    {site: 'Nation.com.pk' , type: 'fake news', lat: 31.5204 , lng: 74.3587 },
+    {site: 'TheWashingtonPress.com' , type: 'imposter', lat: 47.2374 , lng: -88.4432 },
+    {site: 'NewsBreakingPipe.com' , type: 'fake news', lat: 34.7071 , lng: 33.0226 },
+    {site: 'Attitude.co.uk' , type: 'fake news', lat: 51.5074 , lng: -0.1278 },
+    {site: 'AmericanToday.us' , type: 'fake news', lat: 34.0522 , lng: -118.2437 },
+    {site: 'RealnewsRightNow.com' , type: 'parody', lat: 34.0522 , lng: -118.2437 },
+    {site: 'UrbanImageMagazine.com' , type: 'fake news', lat: 40.5584 , lng: -85.6591 },
+    {site: 'Urdoca.com' , type: 'fake news', lat: 7.4675 , lng: 80.6234 },
+    {site: 'OnePoliticalPlaza.com' , type: 'fake news', lat: 25.7617 , lng: -80.1918 },
+    {site: 'BB4SP.com' , type: 'fake news', lat: 35.4495 , lng: -97.3967 },
+    {site: 'NewsJustForYou1.blogspot.com' , type: 'fake news', lat: 37.3861 , lng: -122.0839 },
+    {site: 'FirstPost.com' , type: 'fake news', lat: 19.076 , lng: 72.8777 },
+    {site: 'WorldPoliticsNow.com' , type: 'fake news', lat: 25.048 , lng: -77.3554 },
+    {site: 'Duffelblog.com' , type: 'parody', lat: 25.048 , lng: -77.3554 },
+    {site: 'newsexaminer.net' , type: 'fake news', lat: -31.45 , lng: 152.933 },
+    {site: 'Prntly.com' , type: 'fake news', lat: -31.45 , lng: 152.933 },
+    {site: 'USAPoliticsNow.com' , type: 'fake news', lat: -31.45 , lng: 152.933 },
+    {site: 'USAPolitics24hrs.com' , type: 'fake news', lat: -31.45 , lng: 152.933 },
+    {site: 'worldnewsdailyreport.com' , type: 'parody', lat: -31.45 , lng: 152.933 },
+    {site: 'USADoseNews.com' , type: 'fake news', lat: -31.45 , lng: 152.933 },
+    {site: 'FreedomCrossroads.us' , type: 'parody', lat: 43.6203 , lng: -70.7353 },
+    {site: 'ProudLeader.com' , type: 'fake news', lat: 43.6203 , lng: -70.7353 },
+    {site: 'BreakingNewsBlast.com' , type: 'fake news', lat: 40.2969 , lng: -111.6946 },
+    {site: 'InterestingDailyNews.com' , type: 'fake news', lat: 40.2969 , lng: -111.6946 },
+    {site: 'Liberty-Courier.com' , type: 'fake news', lat: 40.2969 , lng: -111.6946 },
+    {site: 'USTruthWire.com' , type: 'fake news', lat: 8.9824 , lng: -79.5199 },
+    {site: 'USADailyInfo.com' , type: 'fake news', lat: 8.9824 , lng: -79.5199 },
+    {site: 'AmericanFlavor.news' , type: 'fake news', lat: 8.9824 , lng: -79.5199 },
+    {site: 'ArmyUSANews.com' , type: 'fake news', lat: 8.9824 , lng: -79.5199 },
+    {site: 'AwarenessAct.com' , type: 'fake news', lat: 8.9824 , lng: -79.5199 },
+    {site: 'Blog.VeteranTV.net' , type: 'parody', lat: 8.9824 , lng: -79.5199 },
+    {site: 'BlueLineStrong.net' , type: 'fake news', lat: 8.9824 , lng: -79.5199 },
+    {site: 'BlueVision.news' , type: 'fake news', lat: 8.9824 , lng: -79.5199 },
+    {site: 'BlueVisionPost.com' , type: 'fake news', lat: 8.9824 , lng: -79.5199 },
+    {site: 'BreakingTop.world' , type: 'fake news', lat: 8.9824 , lng: -79.5199 },
+    {site: 'Conservative7.com' , type: 'fake news', lat: 8.9824 , lng: -79.5199 },
+    {site: 'ConservativeDailyPost.com' , type: 'fake news', lat: 8.9824 , lng: -79.5199 },
+    {site: 'ConservativePaper.com' , type: 'fake news', lat: 8.9824 , lng: -79.5199 },
+    {site: 'ConservativeView.info' , type: 'fake news', lat: 8.9824 , lng: -79.5199 },
+    {site: 'DailyThings.world' , type: 'fake news', lat: 8.9824 , lng: -79.5199 },
+    {site: 'DaemocraticMoms.com' , type: 'fake news', lat: 8.9824 , lng: -79.5199 },
+    {site: 'NewsBySquad.com' , type: 'fake news', lat: 8.9824 , lng: -79.5199 },        
+    {site: 'NewsFeedHunter.com' , type: 'fake news', lat: 8.9824 , lng: -79.5199 },
+    {site: 'RumorJournal.com' , type: 'fake news', lat: 8.9824 , lng: -79.5199 },
+    {site: 'Snoopack.com' , type: 'fake news', lat: 8.9824 , lng: -79.5199 },
+    {site: 'Spinzon.com' , type: 'fake news', lat: 8.9824 , lng: -79.5199 },
+    {site: 'SupremePatriot.com' , type: 'fake news', lat: 8.9824 , lng: -79.5199 },
+    {site: 'TeddyStick.com' , type: 'fake news', lat: 8.9824 , lng: -79.5199 },
+    {site: 'ThePremiumNews.com' , type: 'fake news', lat: 8.9824 , lng: -79.5199 },
+    {site: 'USAFirstInformation.com' , type: 'fake news', lat: 8.9824 , lng: -79.5199 },
+    {site: '24online.news' , type: 'imposter', lat: 8.9824 , lng: -79.5199 },
+    {site: 'ConservativeFlashNews.com' , type: 'fake news', lat: 8.9824 , lng: -79.5199 },
+    {site: 'DailyFeed.news' , type: 'fake news', lat: 8.9824 , lng: -79.5199 },
+    {site: 'DailyInfoBox.com' , type: 'fake news', lat: 8.9824 , lng: -79.5199 },
+    {site: 'DefenseUsa.club' , type: 'fake news', lat: 8.9824 , lng: -79.5199 },
+    {site: 'DIYHours.net' , type: 'fake news', lat: 8.9824 , lng: -79.5199 },
+    {site: 'FlashNewsCorner.com' , type: 'fake news', lat: 8.9824 , lng: -79.5199 },
+    {site: 'FreeInfoMedia.com' , type: 'fake news', lat: 8.9824 , lng: -79.5199 },
+    {site: 'Huzlers.com' , type: 'parody', lat: 8.9824 , lng: -79.5199 },
+    {site: 'LondonWebNews.com' , type: 'fake news', lat: 8.9824 , lng: -79.5199 },
+    {site: 'nephef.com' , type: 'fake news', lat: 8.9824 , lng: -79.5199 },
+    {site: 'NewsConservative.com' , type: 'fake news', lat: 8.9824 , lng: -79.5199 },
+    {site: 'NewsOfTrump.com' , type: 'fake news', lat: 8.9824 , lng: -79.5199 },
+    {site: 'ObserverOnline.news' , type: 'imposter', lat: 8.9824 , lng: -79.5199 },
+    {site: 'PatriotUSA.website' , type: 'fake news', lat: 8.9824 , lng: -79.5199 },
+    {site: 'PoliticsUSANews.com' , type: 'fake news', lat: 8.9824 , lng: -79.5199 },
+    {site: 'RearFront.com' , type: 'fake news', lat: 8.9824 , lng: -79.5199 },
+    {site: 'USADailyTime.com' , type: 'fake news', lat: 8.9824 , lng: -79.5199 },
+    {site: 'USHealthyAdvisor.com' , type: 'fake news', lat: 8.9824 , lng: -79.5199 },
+    {site: 'USHealthyLife.com' , type: 'fake news', lat: 8.9824 , lng: -79.5199 },
+    {site: 'WeekendPoliticalNews.com' , type: 'fake news', lat: 8.9824 , lng: -79.5199 },
+    {site: 'USAWorldBox.com' , type: 'fake news', lat: 8.9824 , lng: -79.5199 },
+    {site: 'TheMoralOfTheStory.us' , type: 'fake news', lat: 39.7596 , lng: -121.6219 },
+    {site: 'BreakingNews247.net' , type: 'imposter', lat: 48.8566 , lng: 2.3522 },
+    {site: 'BreakingNews365.net' , type: 'imposter', lat: 48.8566 , lng: 2.3522 },
+    {site: 'Disclose.tv' , type: 'fake news', lat: 48.5667 , lng: 13.4319 },
+    {site: 'ABCNews.com.co' , type: 'imposter', lat: 33.4484 , lng: -112.074},
+    {site: 'NBC.com.co' , type: 'imposter', lat: 33.4484 , lng: -112.074 },
+    {site: 'WeLoveNative.com' , type: 'fake news', lat: 42.6675 , lng: 21.1662 },
+    {site: 'Rogue-Nation3.com' , type: 'fake news', lat: 46.8139 , lng: -71.208 },
+    {site: 'BlackInsuranceNews.com' , type: 'fake news', lat: 40.857 , lng: -74.0215 },
+    {site: 'The-Postillon.com' , type: 'parody', lat: 50.6927 , lng: 3.1778 },
+    {site: 'Aurora-News.us' , type: 'imposter', lat: -33.4489 , lng: -70.6693 },
+    {site: 'TheSolExchange.com' , type: 'fake news', lat: 33.4942 , lng: -111.9261 },
+    {site: '16WMPO.com' , type: 'imposter', lat: 33.4942 , lng: -111.9261 },
+    {site: 'actualidadpanamerica.com' , type: 'parody', lat: 33.4942 , lng: -111.9261 },
+    {site: 'AngryPatriotMovement.com' , type: 'fake news', lat: 33.4942 , lng: -111.9261 },
+    {site: 'AsAmericanAsApplePie.org' , type: 'parody', lat: 33.4942 , lng: -111.9261 },
+    {site: 'AssociatedMediaCoverage.com' , type: 'parody', lat: 33.4942 , lng: -111.9261 },
+    {site: 'BostonTribune.com' , type: 'parody', lat: 33.4942 , lng: -111.9261 },
+    {site: 'BuzzFeedUSA.com' , type: 'fake news', lat: 33.4942 , lng: -111.9261 },
+    {site: 'CannaSOS.com' , type: 'fake news', lat: 33.4942 , lng: -111.9261 },
+    {site: 'Channel18News.com' , type: 'imposter', lat: 33.4942 , lng: -111.9261 },
+    {site: 'ChristianTimesNewspaper.com' , type: 'imposter', lat: 33.4942 , lng: -111.9261 },
+    {site: 'ChristianToday.info' , type: 'fake news', lat: 33.4942 , lng: -111.9261 },
+    {site: 'CivicTribune.com' , type: 'imposter', lat: 33.4942 , lng: -111.9261 },
+    {site: 'ClashDaily.com' , type: 'fake news', lat: 33.4942 , lng: -111.9261 },
+    {site: 'CNewsGo.com' , type: 'fake news', lat: 33.4942 , lng: -111.9261 },
+    {site: 'CNNews3.com' , type: 'imposter', lat: 33.4942 , lng: -111.9261 },
+    {site: 'DailyNews10.com' , type: 'imposter', lat: 33.4942 , lng: -111.9261 },
+    {site: 'DailyNews5.com' , type: 'imposter', lat: 33.4942 , lng: -111.9261 },
+    {site: 'DailySnark.com' , type: 'parody', lat: 33.4942 , lng: -111.9261 },
+    {site: 'DailyUSAUpdate.com' , type: 'fake news', lat: 33.4942 , lng: -111.9261 },
+    {site: 'EmpireHerald.com' , type: 'imposter', lat: 33.4942 , lng: -111.9261 },
+    {site: 'FedAlert.com' , type: 'fake news', lat: 33.4942 , lng: -111.9261 },
+    {site: 'FocusNews.info' , type: 'fake news', lat: 33.4942 , lng: -111.9261 },
+    {site: 'Fox-News24.com' , type: 'imposter', lat: 33.4942 , lng: -111.9261 },
+    {site: 'FreedomDaily.com' , type: 'fake news', lat: 33.4942 , lng: -111.9261 },
+    {site: 'FreedomsFinalStand.com' , type: 'fake news', lat: 33.4942 , lng: -111.9261 },
+    {site: 'FreeWoodPost.com' , type: 'parody', lat: 33.4942 , lng: -111.9261 },
+    {site: 'GiveMeLiberty01.com' , type: 'fake news', lat: 33.4942 , lng: -111.9261 },
+    {site: 'GummyPost.com' , type: 'fake news', lat: 33.4942 , lng: -111.9261 },
+    {site: 'HigherPerspectives.com' , type: 'fake news', lat: 33.4942 , lng: -111.9261 },
+    {site: 'HoustonChronicle-TV.com' , type: 'imposter', lat: 33.4942 , lng: -111.9261 },
+    {site: 'KBC14.com' , type: 'imposter', lat: 33.4942 , lng: -111.9261 },
+    {site: 'KMT11.com' , type: 'imposter', lat: 33.4942 , lng: -111.9261 },
+    {site: 'KY12News.com' , type: 'imposter', lat: 33.4942 , lng: -111.9261 },
+    {site: 'LastDeplorables.com' , type: 'fake news', lat: 33.4942 , lng: -111.9261 },
+    {site: 'LearnProgress.com' , type: 'fake news', lat: 33.4942 , lng: -111.9261 },
+    {site: 'LiberalPlug.com' , type: 'fake news', lat: 33.4942 , lng: -111.9261 },
+    {site: 'Local31News.com' , type: 'imposter', lat: 33.4942 , lng: -111.9261 },
+    {site: 'MadWorldNews.com' , type: 'fake news', lat: 33.4942 , lng: -111.9261 },
+    {site: 'Mentor2day.com' , type: 'fake news', lat: 33.4942 , lng: -111.9261 },
+    {site: 'NationalReport.net' , type: 'parody', lat: 33.4942 , lng: -111.9261 },
+    {site: 'TNews4KTLA.com' , type: 'imposter', lat: 33.4942 , lng: -111.9261 },
+    {site: 'NewsDaily12.com' , type: 'imposter', lat: 33.4942 , lng: -111.9261 },
+    {site: 'NewzMagazine.com' , type: 'fake news', lat: 33.4942 , lng: -111.9261 },
+    {site: 'Now8News.com' , type: 'fimposter', lat: 33.4942 , lng: -111.9261 },
+    {site: 'OpenMagazine.com' , type: 'fake news', lat: 33.4942 , lng: -111.9261 },
+    {site: 'PatriotCrier.com' , type: 'fake news', lat: 33.4942 , lng: -111.9261 },
+    {site: 'Persecutes.com' , type: 'fake news', lat: 33.4942 , lng: -111.9261 },
+    {site: 'PoliticalMayhem.news' , type: 'fake news', lat: 33.4942 , lng: -111.9261 },
+    {site: 'Postcard.news' , type: 'fake news', lat: 33.4942 , lng: -111.9261 },
+    {site: 'RedRockTribune.com' , type: 'imposter', lat: 33.4942 , lng: -111.9261 },
+    {site: 'SatiraTribune.com' , type: 'parody', lat: 33.4942 , lng: -111.9261 },
+    {site: 'States-TV.com' , type: 'fake news', lat: 33.4942 , lng: -111.9261 },
+    {site: 'StillnessInTheStorm.com' , type: 'some fake news', lat: 33.4942 , lng: -111.9261 },
+    {site: 'TDTAlliance.com' , type: 'fake news', lat: 33.4942 , lng: -111.9261 },
+    {site: 'The-Insider.co' , type: 'fake news', lat: 33.4942 , lng: -111.9261 },
+    {site: 'TheBigRiddle.com' , type: 'fake news', lat: 33.4942 , lng: -111.9261 },
+    {site: 'TheInternetPost.net' , type: 'fake news', lat: 33.4942 , lng: -111.9261 },
+    {site: 'TheLastLineOfDefense.org' , type: 'parody', lat: 33.4942 , lng: -111.9261 },
+    {site: 'ThePoliticalInsider.com' , type: 'some fake news', lat: 33.4942 , lng: -111.9261 },
+    {site: 'TheRooster.com' , type: ' some fake news', lat: 33.4942 , lng: -111.9261 },
+    {site: 'TheSeattleTribune.com' , type: 'parody', lat: 33.4942 , lng: -111.9261 },
+    {site: 'TheSmokersClub.com' , type: 'some fake news', lat: 33.4942 , lng: -111.9261 },
+    {site: 'TheTrumpMedia.com' , type: 'fake news', lat: 33.4942 , lng: -111.9261 },
+    {site: 'TheUSAConservative.com' , type: 'fake news', lat: 33.4942 , lng: -111.9261 },
+    {site: 'UndergroundNewsReport.com' , type: 'fake news', lat: 33.4942 , lng: -111.9261 },
+    {site: 'USA-Radio.com' , type: 'fake news', lat: 33.4942 , lng: -111.9261 },
+    {site: 'USA-Television.com' , type: 'imposter', lat: 33.4942 , lng: -111.9261 },
+    {site: 'USASnich.com' , type: 'fake news', lat: 33.4942 , lng: -111.9261 },
+    {site: 'USANewsHome.com' , type: 'fake news', lat: 33.4942 , lng: -111.9261 },
+    {site: 'USAPOLN.com' , type: 'fake news', lat: 33.4942 , lng: -111.9261 },
+    {site: 'TheSolExchange.com' , type: 'fake news', lat: 33.4942 , lng: -111.9261 },
+    {site: 'USASupreme.com' , type: 'fake news', lat: 33.4942 , lng: -111.9261 },
+    {site: 'ViralActions.com' , type: 'fake news', lat: 33.4942 , lng: -111.9261 },
+    {site: 'VoxTribune.com' , type: 'fake news', lat: 33.4942 , lng: -111.9261 },
+    {site: 'TMZWorldNews.com' , type: 'fake news', lat: 33.4942 , lng: -111.9261 },
+    {site: 'TopInfoPost.com' , type: 'some fake news', lat: 33.4942 , lng: -111.9261 },
+    {site: 'TheWorldUpdate.com' , type: 'fake news', lat: 33.4942 , lng: -111.9261 },
+    {site: 'ThirdEstateNewsGroup.com' , type: 'fake news', lat: 33.4942 , lng: -111.9261 },
+    {site: 'ConservativeArmy88.com' , type: 'fake news', lat: 33.4942 , lng: -111.9261 },
+    {site: 'EmpireSports.co' , type: 'parody', lat: 38.3981 , lng: -85.755 },
+    {site: 'BenjaminFulford.typepad.com' , type: 'fake news', lat: 22.5431 , lng: -114.0597 },
+    {site: 'JewsNews.co.il' , type: 'some fake news', lat: 32.0544 , lng: 35.2991 },
+    {site: 'MajorThoughts.com' , type: 'fake news', lat: 26.167 , lng: -80.2566 },
+    {site: 'AmericanPresident.co' , type: 'fake news', lat: 41.7151 , lng: 44.8271 },
+    {site: 'NewsLeak.co' , type: 'fake news', lat: 41.7151 , lng: 44.8271 },
+    {site: 'Newslo.com' , type: 'parody', lat: 40.6401 , lng: 22.9444 },
+    {site: 'AlabamaObserver.com' , type: 'imposter', lat: 43.6532 , lng: -79.3832 },
+    {site: 'BostonLeader.com' , type: 'parody', lat: 43.6532 , lng: -79.3832 },
+    {site: 'DenverInquirer.com' , type: 'imposter', lat: 43.6532 , lng: -79.3832 },
+    {site: 'FloridaSunPost.com' , type: 'parody', lat: 43.6532 , lng: -79.3832 },
+    {site: 'IndependentMinute.com' , type: 'some fake news', lat: 43.6532 , lng: -79.3832 },
+    {site: 'IsThatLegit.com' , type: 'fake news', lat: 43.6532 , lng: -79.3832 },
+    {site: 'MississippiHerald.com' , type: 'imposter', lat: 43.6532 , lng: -79.3832 },
+    {site: 'NeonNettle.com' , type: 'fake news', lat: 43.6532 , lng: -79.3832 },
+    {site: 'NNettle.com' , type: 'fake news', lat: 43.6532 , lng: -79.3832 },
+    {site: 'USPoliticsInfo.com' , type: 'fake news', lat: 43.6532 , lng: -79.3832 },
+    {site: 'MediaMaxZone.com' , type: 'some fake news', lat: 18.3526 , lng: -77.6078 },
+    {site: 'WashingtonFeed.com' , type: 'imposter', lat: 49.2827 , lng: -123.1207 },
+    {site: '24wpn.com' , type: 'fake news', lat: 41.7165 , lng: 21.7723 },
+    {site: 'AmericanPeopleNetwork.com' , type: 'fake news', lat: 41.7165 , lng: 21.7723 },
+    {site: 'DailySidNews.com' , type: 'fake news', lat: 41.7165 , lng: 21.7723 },
+    {site: 'FreshDailyReport.com' , type: 'fake news', lat: 41.7165 , lng: 21.7723 },
+    {site: 'RedCountry.us' , type: 'fake news', lat: 41.7165 , lng: 21.7723 },
+    {site: 'RedInfo.us' , type: 'fake news', lat: 41.7165 , lng: 21.7723 },
+    {site: 'RedPolitics.us' , type: 'fake news', lat: 41.7165 , lng: 21.7723 },
+    {site: 'TheExaminer.site' , type: 'fake news', lat: 41.7165 , lng: 21.7723 },
+    {site: 'UniversePolitics.com' , type: 'fake news', lat: 41.7165 , lng: 21.7723 },
+    {site: 'USADailyPost.us' , type: 'fake news', lat: 41.7165 , lng: 21.7723 },
+    {site: 'USAPoliticsZone.com' , type: 'fake news', lat: 41.7165 , lng: 21.7723 },
+    {site: 'USInfoNews.com' , type: 'fake news', lat: 41.7165 , lng: 21.7723 },
+    {site: 'USPostman.com' , type: 'fake news', lat: 41.7165 , lng: 21.7723 },
+    {site: 'WeConservative.com' , type: 'fake news', lat: 41.7165 , lng: 21.7723 },
+    {site: 'USANews4U.us' , type: 'fake news', lat: 18.3358 , lng: -64.8963 },
+    {site: 'WashingtonPost.com.co' , type: 'imposter', lat: 38.9072 , lng: -77.0369 },
+    {site: 'DailyStormer.com' , type: 'some fake news', lat: 40.0931 , lng: -83.018 }
+];
+    
+    
+    
+  </script>
+  <script src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyD-IJdLIFh4GjzaQHdZ1OA3jJLY6IhpLMI&callback=myMap"></script>
+  </body>
+
+</html>
